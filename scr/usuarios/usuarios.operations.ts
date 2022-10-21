@@ -1,5 +1,5 @@
 import oracledb from 'oracledb';
-import OracleDB from '../../db/oracledb';
+import OracleDB from '../common/db/oracledb';
 
 
 export const createUsuario = async (body: any) =>{
@@ -83,7 +83,7 @@ export const getUsuario = async (userName: string) =>{
     const parameters: any ={
     P_USERNAME: userName,
     P_USUARIO : {
-        type: oracledb.r,
+        type: oracledb.STRING,
         dir: oracledb.BIND_OUT
     },
     STATUS_CODE:{
